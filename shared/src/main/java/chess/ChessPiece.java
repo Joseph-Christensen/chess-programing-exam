@@ -54,9 +54,11 @@ public class ChessPiece {
      * @return Collection of valid moves
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
-        var moves = new HashSet<ChessMove>();
-        moves.add(new ChessMove(new ChessPosition(5,4), new ChessPosition(6,5), null));
-        return moves;
+        if (type == PieceType.BISHOP) {
+            BishopMovesCalculator bishopCalc = new BishopMovesCalculator(board, myPosition, this);
+            return bishopCalc.returnMoves();
+        }
+        return null;
     }
 
     @Override
