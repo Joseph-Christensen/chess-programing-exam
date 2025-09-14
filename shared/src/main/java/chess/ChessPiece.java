@@ -58,7 +58,26 @@ public class ChessPiece {
             BishopMovesCalculator bishopCalc = new BishopMovesCalculator(board, myPosition, this);
             return bishopCalc.returnMoves();
         }
-        return null;
+        else if (type == PieceType.ROOK) {
+            RookMovesCalculator rookCalc = new RookMovesCalculator(board, myPosition, this);
+            return rookCalc.returnMoves();
+        }
+        else if (type == PieceType.QUEEN) {
+            QueenMovesCalculator queenCalc = new QueenMovesCalculator(board, myPosition, this);
+            return queenCalc.returnMoves();
+        }
+        else if (type == PieceType.KING) {
+            KingMovesCalculator kingCalc = new KingMovesCalculator(board, myPosition, this);
+            return kingCalc.returnMoves();
+        }
+        else if (type == PieceType.KNIGHT) {
+            KnightMovesCalculator knightCalc = new KnightMovesCalculator(board, myPosition, this);
+            return knightCalc.returnMoves();
+        }
+        else {
+            PawnMovesCalculator pawnCalc = new PawnMovesCalculator(board, myPosition, this);
+            return pawnCalc.returnMoves();
+        }
     }
 
     @Override

@@ -18,8 +18,6 @@ public class BishopMovesCalculator {
     public Collection<ChessMove> returnMoves() {
         var moves = new HashSet<ChessMove>();
         ChessGame.TeamColor team = piece.getTeamColor();
-        int initRow = position.getRow();
-        int initCol = position.getColumn();
         // runs through the for loop 4 times, once for each direction
         for (int i = 0; i < 4; i++) {
             if (i == 0) {
