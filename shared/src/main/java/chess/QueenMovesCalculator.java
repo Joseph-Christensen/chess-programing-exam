@@ -19,7 +19,7 @@ public class QueenMovesCalculator {
         var moves = new HashSet<ChessMove>();
         ChessGame.TeamColor team = piece.getTeamColor();
         // runs through the for loop 4 times, once for each diagonal direction
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 8; i++) {
             if (i == 0) {
                 // up-left
                 int row = position.getRow();
@@ -107,7 +107,7 @@ public class QueenMovesCalculator {
                     }
                 }
             }
-            else {
+            else if (i == 3) {
                 // down-left
                 int row = position.getRow();
                 int col = position.getColumn();
@@ -136,10 +136,7 @@ public class QueenMovesCalculator {
                     }
                 }
             }
-        }
-        // runs through the for loop 4 times, once for each straight direction
-        for (int i = 0; i < 4; i++) {
-            if (i == 0) {
+            if (i == 4) {
                 // left
                 int row = position.getRow();
                 int col = position.getColumn();
@@ -167,7 +164,7 @@ public class QueenMovesCalculator {
                     }
                 }
             }
-            else if (i == 1) {
+            else if (i == 5) {
                 // up
                 int row = position.getRow();
                 int col = position.getColumn();
@@ -195,7 +192,7 @@ public class QueenMovesCalculator {
                     }
                 }
             }
-            else if (i == 2) {
+            else if (i == 6) {
                 // right
                 int row = position.getRow();
                 int col = position.getColumn();
